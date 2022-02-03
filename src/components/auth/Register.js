@@ -19,6 +19,10 @@ const { firstName, lastName, phone, email, password, password2 } = formData
 const onChange = e => {
   setFormData({ ...formData, [e.target.name] : e.target.value })
 }
+
+const onSubmit = e => {
+  
+}
   return (
     <Fragment>
     <div className='register-form'>
@@ -32,7 +36,7 @@ const onChange = e => {
       </div>
       <div className='register-form-col2'>
         
-         <form className='form'>
+         <form className='form' onSubmit={onSubmit} >
          <h4 className='form-heading'>Register</h4>
          <h6 className='form-paragragh'>Manage all your lottery efficiency</h6>
          <p className='form-sentence'>Let's get you all set up so you can verify your personal account and begin setting up your profile.</p>
@@ -96,7 +100,7 @@ const onChange = e => {
            </div>
            <input type="submit" value="Create Account" className="form-button" />
            
-           <p className='form-log-paragraph'> Already have an account? <Link to="/login">Sign In</Link></p>
+           <p className='form-log-paragraph'> Already have an account? <Link to="/login">Log In</Link></p>
            
          </form>
       </div>

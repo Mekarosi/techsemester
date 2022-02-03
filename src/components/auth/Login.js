@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom'
 import logo2 from "../../img/logo2.JPG"
 
  const Login = () => {
@@ -59,8 +60,8 @@ const onChange = e => {
            </div>
 
            <button className='form-button'>Create Account</button>
-           <p className='form-log-paragraph'>Don't have an account?</p><href>Create an Account</href>
-           
+          
+           <p className='form-log-paragraph'>Don't have an account?<Link to="/register">Sign in</Link></p>
          </form>
           
            
