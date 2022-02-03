@@ -1,7 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+}
+/* Register form */
+.register-form {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  transform: translateY(-50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  height: 600px;
+  border-radius: remy(3px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.register-form-col1 {
+  width: 200px;
+  height: 600px;
+  background-color: #0071ff;
+}
+
+.register-form-col2 {
+  width: 600px;
+  height: 600px;
+  background-color: #feffff;
 }

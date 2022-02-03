@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-export const Login = () => {
+ const Login = () => {
   return (
     <Fragment>
     <h1>Login Page</h1>
@@ -8,3 +8,5 @@ export const Login = () => {
   )
   
 };
+
+export default Login;

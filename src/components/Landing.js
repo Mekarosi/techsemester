@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-export const Landing = () => {
+ const Landing = () => {
   return (
     <Fragment>
     <h1>Landing Page</h1>
@@ -8,3 +8,4 @@ export const Landing = () => {
   )
   
 };
+export default Landing
