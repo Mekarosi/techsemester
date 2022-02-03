@@ -30,7 +30,7 @@ body {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .register-form-col1 {
-  width: 200px;
+  width: 300px;
   height: 600px;
   background-color: #0071ff;
 }
@@ -39,4 +39,73 @@ body {
   width: 600px;
   height: 600px;
   background-color: #feffff;
+}
+
+.logo1 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.frontlay {
+  margin-top: 120px;
+  margin-left: 20px;
+}
+
+.register-front-text {
+  color: gainsboro;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 60px;
+  font-weight: bold;
+}
+
+.form-labal1 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form {
+  width: 400px;
+  height: 400px;
+  /* background-color: gray; */
+  margin-top: 100px;
+  margin-left: 60px;
+}
+.form-heading {
+  margin-left: 15px;
+  margin-bottom: 20px;
+}
+
+.form-paragragh {
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+
+.form-sentence {
+  margin-left: 15px;
+  font-size: x-small;
+  margin-bottom: 20px;
+}
+.form-checkbox {
+  margin-left: 15px;
+}
+
+.form-button {
+  margin-left: 15px;
+}
+.form-log-paragraph {
+  margin-left: 15px;
+}
+
+.form-button {
+  color: white;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #0071ff;
+}
+.checkbox-text {
+  font-size: x-small;
 }
