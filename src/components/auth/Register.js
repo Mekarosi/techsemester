@@ -1,8 +1,24 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
+import { Link } from 'react-router-dom'
 import frontlay from "../../img/frontlay.JPG"
 import logo1 from "../../img/logo1.JPG"
 
  const Register = () => {
+  
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: '',
+    password: '',
+    password2: ''
+})
+
+const { firstName, lastName, phone, email, password, password2 } = formData
+
+const onChange = e => {
+  setFormData({ ...formData, [e.target.name] : e.target.value })
+}
   return (
     <Fragment>
     <div className='register-form'>
@@ -25,33 +41,51 @@ import logo1 from "../../img/logo1.JPG"
              <div >
                 <label  class="">First Name</label>
                 <br/>
-                <input type="text"  className="" />
+                <input  type="text" name='FirstName' value={firstName} 
+                    onChange={onChange}
+                    className="" />
              </div>
              <div>
                 <label  class="">Last Name</label><br/>
-                <input type="text"  className="" />
+                <input 
+                    type="text" name='lastName' value={lastName} 
+                    onChange={onChange}
+                    className=""
+                />
              </div>
            </div>
            <div className='form-labal1'>
              <div >
                 <label  class="">Phone Number</label>
                 <br/>
-                <input type="text"  className=""/>
+                <input 
+                   type="text" name='phone' value={phone} 
+                   onChange={onChange}
+                   className=""
+                />
              </div>
              <div>
                 <label  class="">Email</label><br/>
-                <input type="text"  className='' />
+                <input  
+                type="email" name='email' value={email} 
+                    onChange={onChange}
+                    className="" />
              </div>
            </div>
            <div className='form-labal1'>
              <div >
                 <label  class="">Password</label>
                 <br/>
-                <input type="text"  className='' />
+                <input 
+                 type="password" name='password' value={password} 
+                 onChange={onChange}
+                 className="" />
              </div>
              <div>
                 <label  class="">Comfirm Password</label><br/>
-                <input type="text"  className=''/>
+                <input  type="password2" name='password2' value={password2} 
+                 onChange={onChange}
+                 className=""/>
              </div>
            </div>
            <div className='form-checkbox'>
@@ -60,9 +94,9 @@ import logo1 from "../../img/logo1.JPG"
               <input type="checkbox" className='checkbox-text'/>
               <label for="vehicle1"> I agree to all the Term, Privacy Policy and Fees</label><br/>
            </div>
-
-           <button className='form-button'>Create Account</button>
-           <p className='form-log-paragraph'>Already have a account</p><href>Log in </href>
+           <input type="submit" value="Create Account" className="form-button" />
+           
+           <p className='form-log-paragraph'> Already have an account? <Link to="/login">Sign In</Link></p>
            
          </form>
       </div>

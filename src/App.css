@@ -109,3 +109,27 @@ body {
 .checkbox-text {
   font-size: x-small;
 }
+
+/* Login form */
+.login-form-logo {
+  display: flex;
+  align-items: start;
+}
+
+.login-form {
+  display: flex;
+  justify-content: start;
+}
+
+/* Landing Page */
+.langing-page {
+  width: 600px;
+  height: 600px;
+  background-color: white;
+  border-radius: remy(3px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: flex;
+  align-content: center;
+  margin-top: 50px;
+  margin-left: 50px;
+}
