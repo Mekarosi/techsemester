@@ -38,7 +38,7 @@ const onChange = e => {
                 <br/>
                 <input type="email"  className="" placeholder="Email or Phone Number"    name='email' value={email} 
                     onChange={onChange}
-                    className="" />
+                     />
              </div>
              
            </div>
@@ -48,7 +48,7 @@ const onChange = e => {
                 <br/>
                 <input  type="password"  className="" placeholder="Password"  name='password' value={password} 
                  onChange={onChange}
-                 className=""/>
+                 />
              </div>
             
            </div>
