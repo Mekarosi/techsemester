@@ -21,7 +21,7 @@ const onChange = e => {
 }
 
 const onSubmit = e => {
-  
+  console.log('submit')
 }
   return (
     <Fragment>

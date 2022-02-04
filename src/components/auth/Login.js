@@ -19,6 +19,10 @@ const onChange = e => {
   setFormData({ ...formData, [e.target.name] : e.target.value })
 }
 
+const onSubmit = e => {
+  console.log('submit')
+}
+
   return (
     <Fragment>
        <div className='login-form'>
@@ -27,7 +31,7 @@ const onChange = e => {
            <h4 className='logo2-text'>Lottery Diplay</h4>
         </div> 
       
-        <form className='form'>
+        <form className='form' onSubmit={onSubmit}>
          <h4 className='form-heading'>Login</h4>
          <h6 className='form-paragragh'>Login to your account</h6>
          <p className='form-sentence'>Thank you for get back best recommendation</p>
@@ -59,7 +63,7 @@ const onChange = e => {
               
            </div>
 
-           <button className='form-button'>Create Account</button>
+           <input type="submit" value="Sign In" className="form-button" />
           
            <p className='form-log-paragraph'>Don't have an account?<Link to="/register">Sign in</Link></p>
          </form>

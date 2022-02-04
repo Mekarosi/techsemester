@@ -20,10 +20,15 @@ const { user, body, active, title, url, videoUrl, tags } = formData
 const onChange = e => {
   setFormData({ ...formData, [e.target.name] : e.target.value })
 }
+
+const onSubmit = e => {
+  console.log('submit')
+}
+
   return (
     <Fragment>
        <div className='langing-page'>
-         <form>
+         <form onSubmit={onSubmit}>
          <div>
          <img src={logo3} alt="logo" className='logo3'/>
          </div>
@@ -40,21 +45,21 @@ const onChange = e => {
              <p>Input all information needed to answer your question</p>
          </div>
          <div >
-                <label  class="">User</label>
+                <label  className="">User</label>
                 <br/>
                 <input type='number'  placeholder="User"    name='user' value={user} 
                     onChange={onChange}
                     className="" />
           </div>
           <div >
-                <label  class="">Body</label>
+                <label  className="">Body</label>
                 <br/>
                 <input type="textarea"  placeholder="Body"    name='body' value={body} 
                     onChange={onChange}
                     className="" />
           </div>
           <div >
-                <label  class="">Active</label>
+                <label  className="">Active</label>
                 <br/>
                 <input type="number"  placeholder="Active"    name='active' value={active} 
                     onChange={onChange}
@@ -75,19 +80,20 @@ const onChange = e => {
                     className="" />
           </div>
           <div >
-                <label  class="">Video url</label>
+                <label  className="">Video url</label>
                 <br/>
                 <input type="text"  placeholder="Video url"    name='videoUrl' value={videoUrl} 
                     onChange={onChange}
                     className="" />
           </div>
           <div >
-                <label  class="">Tags</label>
+                <label  className="">Tags</label>
                 <br/>
                 <input type="number"  placeholder="Tags"    name='tags' value={tags} 
                     onChange={onChange}
                     className="" />
           </div>
+          <input type="submit" value="Sumbit Question" className="form-button" />
 
 
          </form>
