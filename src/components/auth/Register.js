@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { register } from '../../actions/auth';
 import frontlay from "../../img/frontlay.JPG"
 import logo1 from "../../img/logo1.JPG"
 
- const Register = () => {
+ const Register = ({ register}) => {
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -21,7 +24,12 @@ const onChange = e => {
 }
 
 const onSubmit = e => {
-  console.log('submit')
+ e.preventDefault()
+ if(password !== password2){
+   alert('Passwords do not match')
+ }else{
+   register({ firstName, lastName, phone, email, password  })
+ }
 }
   return (
     <Fragment>
@@ -110,4 +118,9 @@ const onSubmit = e => {
   
 };
 
-export default Register;
+
+Register.proTypes = {
+  register: PropTypes.func.isRequired
+}
+
+export default connect(null, { register })(Register);
