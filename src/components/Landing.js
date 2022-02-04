@@ -1,9 +1,22 @@
-import React, { Fragment } from 'react';
+import number from '@hapi/joi/lib/types/number';
+import React, { Fragment, useState } from 'react';
 import logo3 from "../../src/img/logo3.JPG"
 
 
 
  const Landing = () => {
+
+  const [formData, setFormData] = useState({
+    user: number,
+    body: '',
+    active: number,
+    title: '',
+    url: '',
+    videoUrl: '',
+    tags: number
+})
+
+const { user, body, active, title, url, videoUrl, tags } = formData
   return (
     <Fragment>
        <div className='langing-page'>
