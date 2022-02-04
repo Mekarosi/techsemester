@@ -30,7 +30,7 @@ const onSubmit = e => {
       <img src={logo1} alt="logo" className='logo1'/>
      
           <p className='register-front-text'>
-            A few clicks away from creating your <br/> Lottery Display 
+            A few clicks away <br/> from creating your <br/> Lottery Display 
           </p>
           <img src={frontlay} alt="front logo" className='frontlay' />  
       </div>
@@ -43,14 +43,14 @@ const onSubmit = e => {
 
            <div className='form-labal1'>
              <div >
-                <label  class="">First Name</label>
+                <label  className="">First Name</label>
                 <br/>
                 <input  type="text" name='FirstName' value={firstName} 
                     onChange={onChange}
                     className="" />
              </div>
              <div>
-                <label  class="">Last Name</label><br/>
+                <label  className="">Last Name</label><br/>
                 <input 
                     type="text" name='lastName' value={lastName} 
                     onChange={onChange}
@@ -60,7 +60,7 @@ const onSubmit = e => {
            </div>
            <div className='form-labal1'>
              <div >
-                <label  class="">Phone Number</label>
+                <label  className="">Phone Number</label>
                 <br/>
                 <input 
                    type="text" name='phone' value={phone} 
@@ -69,7 +69,7 @@ const onSubmit = e => {
                 />
              </div>
              <div>
-                <label  class="">Email</label><br/>
+                <label  className="">Email</label><br/>
                 <input  
                 type="email" name='email' value={email} 
                     onChange={onChange}
@@ -78,7 +78,7 @@ const onSubmit = e => {
            </div>
            <div className='form-labal1'>
              <div >
-                <label  class="">Password</label>
+                <label  className="">Password</label>
                 <br/>
                 <input 
                  type="password" name='password' value={password} 
@@ -86,7 +86,7 @@ const onSubmit = e => {
                  className="" />
              </div>
              <div>
-                <label  class="">Comfirm Password</label><br/>
+                <label  className="">Comfirm Password</label><br/>
                 <input  type="password2" name='password2' value={password2} 
                  onChange={onChange}
                  className=""/>

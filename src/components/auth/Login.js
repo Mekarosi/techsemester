@@ -34,7 +34,7 @@ const onChange = e => {
 
            <div className=''>
              <div >
-                <label  class="">Username</label>
+                <label  className="">Username</label>
                 <br/>
                 <input type="email"  className="" placeholder="Email or Phone Number"    name='email' value={email} 
                     onChange={onChange}
@@ -44,7 +44,7 @@ const onChange = e => {
            </div>
            <div className=''>
              <div >
-                <label  class="">Password</label>
+                <label  className="">Password</label>
                 <br/>
                 <input  type="password"  className="" placeholder="Password"  name='password' value={password} 
                  onChange={onChange}

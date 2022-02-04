@@ -1,4 +1,3 @@
-import number from '@hapi/joi/lib/types/number';
 import React, { Fragment, useState } from 'react';
 import logo3 from "../../src/img/logo3.JPG"
 
@@ -7,16 +6,20 @@ import logo3 from "../../src/img/logo3.JPG"
  const Landing = () => {
 
   const [formData, setFormData] = useState({
-    user: number,
+    user: '',
     body: '',
-    active: number,
+    active: '',
     title: '',
     url: '',
     videoUrl: '',
-    tags: number
+    tags: ''
 })
 
 const { user, body, active, title, url, videoUrl, tags } = formData
+
+const onChange = e => {
+  setFormData({ ...formData, [e.target.name] : e.target.value })
+}
   return (
     <Fragment>
        <div className='langing-page'>
@@ -39,7 +42,7 @@ const { user, body, active, title, url, videoUrl, tags } = formData
          <div >
                 <label  class="">User</label>
                 <br/>
-                <input type="number"  placeholder="User"    name='user' value={user} 
+                <input type='number'  placeholder="User"    name='user' value={user} 
                     onChange={onChange}
                     className="" />
           </div>
@@ -88,9 +91,9 @@ const { user, body, active, title, url, videoUrl, tags } = formData
 
 
          </form>
-         
-        
        </div>
+       <br/>
+       <br/>
     </Fragment>  
   )
   
