@@ -68,8 +68,12 @@ const onSubmit = e => {
          <div >
                 <label  className="">User</label>
                 <br/>
-                <input type='number'  placeholder="User"    name='user' value={user} 
-                    onChange={onChange}
+                <input 
+                type='number'  
+                placeholder="User"    
+                name='user' 
+                value={user} 
+                onChange={onChange}
                     className="" />
           </div>
           <div >
