@@ -2,6 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import { askQuestion } from '../actions/question';
 import PropTypes from 'prop-types'
+import Navbar from './Navbar';
 import logo3 from "../../src/img/logo3.JPG"
 
 
@@ -41,13 +42,19 @@ const onSubmit = e => {
 
   return (
     <Fragment>
+     
+       <div className='container'>
+       <Navbar />
+    
+       
+       
        <div className='langing-page'>
+        
          <form onSubmit={onSubmit}>
-         <div>
-         <img src={logo3} alt="logo" className='logo3'/>
-         </div>
+        
          <br/>
          <div>
+         <img src={logo3} alt="logo" className='logo3'/>
          <p>Ask your Question</p>
          </div>
          <br/>
@@ -107,10 +114,11 @@ const onSubmit = e => {
                     onChange={onChange}
                     className="" />
           </div>
-          <input type="submit" value="Sumbit Question" className="form-button" />
+          <input type="submit" value="Post your question" className="form-button" />
 
 
          </form>
+       </div>
        </div>
        <br/>
        <br/>
