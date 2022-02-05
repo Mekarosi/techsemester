@@ -1,12 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { register } from '../../actions/auth';
 import frontlay from "../../img/frontlay.JPG"
 import logo1 from "../../img/logo1.JPG"
 
- const Register = ({ register}) => {
+ const Register = ({ register, isAuthenticated }) => {
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -31,6 +31,12 @@ const onSubmit = e => {
    register({ firstName, lastName, phone, email, password  })
  }
 }
+
+// Redirect if logged in
+if(isAuthenticated){
+  return <Redirect to='/' />
+}
+
   return (
     <Fragment>
     <div className='register-form'>
@@ -53,7 +59,7 @@ const onSubmit = e => {
              <div >
                 <label  className="">First Name</label>
                 <br/>
-                <input  type="text" name='FirstName' value={firstName} 
+                <input  type="text" name='firstName' value={firstName} 
                     onChange={onChange}
                     className="" />
              </div>
@@ -120,7 +126,12 @@ const onSubmit = e => {
 
 
 Register.proTypes = {
-  register: PropTypes.func.isRequired
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
 }
 
-export default connect(null, { register })(Register);
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, { register })(Register);
