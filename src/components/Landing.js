@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
+import { askQuestion } from '../actions/question';
+import PropTypes from 'prop-types'
 import logo3 from "../../src/img/logo3.JPG"
 
 
 
- const Landing = () => {
+ const Landing = ({ askQuestion }) => {
 
   const [formData, setFormData] = useState({
     user: '',
@@ -22,7 +25,18 @@ const onChange = e => {
 }
 
 const onSubmit = e => {
-  console.log('submit')
+ e.preventDefault()
+ askQuestion({ user, body, active, title, url, videoUrl, tags })
+ setFormData({
+  user: '',
+  body: '',
+  active: '',
+  title: '',
+  url: '',
+  videoUrl: '',
+  tags: ''
+ })
+
 }
 
   return (
@@ -104,4 +118,8 @@ const onSubmit = e => {
   )
   
 };
-export default Landing
+
+Landing.propTypes = {
+  askQuestion: PropTypes.func.isRequired
+}
+export default connect(null, { askQuestion } )(Landing)
