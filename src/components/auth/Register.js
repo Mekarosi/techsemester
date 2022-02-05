@@ -1,9 +1,12 @@
 import React, { Fragment, useState } from 'react';
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { register } from '../../actions/auth';
 import frontlay from "../../img/frontlay.JPG"
 import logo1 from "../../img/logo1.JPG"
 
- const Register = () => {
+ const Register = ({ register, isAuthenticated }) => {
   
   const [formData, setFormData] = useState({
     firstName: '',
@@ -21,8 +24,19 @@ const onChange = e => {
 }
 
 const onSubmit = e => {
-  
+ e.preventDefault()
+ if(password !== password2){
+   alert('Passwords do not match')
+ }else{
+   register({ firstName, lastName, phone, email, password  })
+ }
 }
+
+// Redirect if logged in
+if(isAuthenticated){
+  return <Redirect to='/' />
+}
+
   return (
     <Fragment>
     <div className='register-form'>
@@ -30,7 +44,7 @@ const onSubmit = e => {
       <img src={logo1} alt="logo" className='logo1'/>
      
           <p className='register-front-text'>
-            A few clicks away from creating your <br/> Lottery Display 
+            A few clicks away <br/> from creating your <br/> Lottery Display 
           </p>
           <img src={frontlay} alt="front logo" className='frontlay' />  
       </div>
@@ -43,14 +57,14 @@ const onSubmit = e => {
 
            <div className='form-labal1'>
              <div >
-                <label  class="">First Name</label>
+                <label  className="">First Name</label>
                 <br/>
-                <input  type="text" name='FirstName' value={firstName} 
+                <input  type="text" name='firstName' value={firstName} 
                     onChange={onChange}
                     className="" />
              </div>
              <div>
-                <label  class="">Last Name</label><br/>
+                <label  className="">Last Name</label><br/>
                 <input 
                     type="text" name='lastName' value={lastName} 
                     onChange={onChange}
@@ -60,7 +74,7 @@ const onSubmit = e => {
            </div>
            <div className='form-labal1'>
              <div >
-                <label  class="">Phone Number</label>
+                <label  className="">Phone Number</label>
                 <br/>
                 <input 
                    type="text" name='phone' value={phone} 
@@ -69,7 +83,7 @@ const onSubmit = e => {
                 />
              </div>
              <div>
-                <label  class="">Email</label><br/>
+                <label  className="">Email</label><br/>
                 <input  
                 type="email" name='email' value={email} 
                     onChange={onChange}
@@ -78,7 +92,7 @@ const onSubmit = e => {
            </div>
            <div className='form-labal1'>
              <div >
-                <label  class="">Password</label>
+                <label  className="">Password</label>
                 <br/>
                 <input 
                  type="password" name='password' value={password} 
@@ -86,7 +100,7 @@ const onSubmit = e => {
                  className="" />
              </div>
              <div>
-                <label  class="">Comfirm Password</label><br/>
+                <label  className="">Comfirm Password</label><br/>
                 <input  type="password2" name='password2' value={password2} 
                  onChange={onChange}
                  className=""/>
@@ -110,4 +124,14 @@ const onSubmit = e => {
   
 };
 
-export default Register;
+
+Register.proTypes = {
+  register: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+}
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps, { register })(Register);
